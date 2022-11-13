@@ -34,14 +34,15 @@ CREATE TABLE moves
 CREATE TABLE player
 (
   id         SERIAL PRIMARY KEY,
+  rank_      INTEGER   NULL    ,
   first_name TEXT      NULL    ,
   last_name  TEXT      NULL    ,
   add_name   TEXT      NULL    ,
   gender     TEXT      NULL    ,
-  type_       TEXT      NULL    ,
+  language   TEXT      NULL    ,
+  type_      TEXT      NULL    ,
   dob        DATE      NULL    ,
-  local_time TIMESTAMP NULL    ,
-  tz         TEXT      NULL    
+  local_time TIMESTAMP NULL 
 );
 
 ALTER TABLE moves
@@ -100,6 +101,11 @@ INSERT INTO game_players
 ( player_id, game_id)
 VALUES
 (2, 1);
+
+INSERT INTO game_players
+( player_id, game_id)
+VALUES
+(3, 2);
 
 --- one more game game with is active
 
